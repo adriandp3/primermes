@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primer Mes</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f09797; /* Color de fondo */
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+h1 {
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff483a;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    color: #333;
+}
+
+.gif {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img class="gif" src="ALE1.gif" alt="GIF Izquierda">
+  <img class="gif" src="ALE2.gif" alt="GIF Derecha">
+  <h1> ❤️Ale y Adrián❤️</h1>
+  <form id="nameForm">
+    <label for="name">Ingresa la palabra secreta</label><br>
+    <input type="text" id="name" name="name" required><br>
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="message" class="hidden">
+    <p id="greeting">¡Buenas noches <span id="outputName"> mi amor</span>!</p>
+    <p id="birthdayWishes"></p>
+    <p>En este primer mes juntos, quiero decirte lo agradecido que estoy por tenerte a mi lado.</p>
+    <p>Cada día contigo es como un regalo, lleno de risas y momentos especiales que atesoro.</p> 
+    <p>Tu compañía ilumina mis días, y estoy emocionado por todo lo que aún nos espera.</p>
+    <p>Gracias por hacer que este mes sea tan especial.</p>
+    <p>Te quiero mucho y estoy emocionado por muchos más meses juntos.</p>
+    <br>💜 ¡Feliz primer mes, mi amor! 💜
+  </div>
+</div>
+
+<script>
+    document.getElementById("nameForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var name = document.getElementById("name").value.trim();
+        var greeting = document.getElementById("greeting");
+        var message = document.getElementById("message");
+        var outputName = document.getElementById("outputName");
+        var birthdayWishes = document.getElementById("birthdayWishes");
+        // Cambios en la condición para aceptar "AyA 08" sin importar mayúsculas o minúsculas
+        if (name.toLowerCase() === "aya 09") {
+            outputName.textContent = "AyA 09"; // Usar el nombre ingresado
+            greeting.textContent = "¡Buenas noches mi amorcito!";
+            birthdayWishes.style.display = "block";
+            message.classList.remove("hidden");
+        } else {
+            alert("Nombre incorrecto. La página se cerrará.");
+            window.close(); // Cerrar la página
+        }
+        document.getElementById("name").value = "";
+    });
+    </script>
+<div>
+    <audio id="audio" src="ale4.mp3" type="audio/mpeg"></audio>
+  </div>
+  <script>
+    document.body.addEventListener('click', function() {
+      var audio = document.getElementById('audio');
+      audio.play();
+    });
+    </script>
+<script defer src="https://app.embed.im/snow.js"></script> 
+</body>
+</html>
